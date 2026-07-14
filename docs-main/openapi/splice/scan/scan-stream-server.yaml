@@ -3,7 +3,7 @@ info:
   title: Scan Streaming API
   version: 0.0.1
 servers:
-  - url: https://example.com/api/scan
+  - url: https://scan.sv-1.global.canton.network.sync.global/api/scan
 tags:
   - name: external
     description: |
@@ -23,7 +23,7 @@ tags:
 paths:
   /v0/history/bulk/download/{object_key}:
     get:
-      summary: "/v0/history/bulk/download/{object_key}"
+      summary: "GET /v0/history/bulk/download/:object_key"
       tags:
         - pre-alpha
         - scan

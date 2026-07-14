@@ -23,6 +23,9 @@ DEFAULT_SOURCE_CONFIG = REPO_ROOT / "config" / "mintlify-openapi" / "splice-open
 DEFAULT_CACHE_DIR = REPO_ROOT / ".internal" / "cache" / "mintlify-openapi" / "splice-openapi"
 DEFAULT_DOCS_JSON = REPO_ROOT / "docs-main" / "docs.json"
 HTTP_METHODS = {"get", "put", "post", "delete", "options", "head", "patch", "trace"}
+SCAN_OPENAPI_PLACEHOLDER_SERVER = "https://example.com/api/scan"
+SCAN_OPENAPI_PUBLIC_SERVER = "https://scan.sv-1.global.canton.network.sync.global/api/scan"
+SCAN_OPENAPI_SERVER_REPLACEMENT_SPECS = {"scan.yaml", "scan-stream-server.yaml"}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -241,11 +244,13 @@ def extract_spec_bytes(
     return extracted
 
 
-def render_output_bytes(*, spec_bytes: bytes, output_path: Path) -> bytes:
+def render_output_bytes(*, spec_filename: str, spec_bytes: bytes, output_path: Path) -> bytes:
     if output_path.suffix not in {".yaml", ".yml"}:
         return spec_bytes
 
     text = spec_bytes.decode("utf-8")
+    if spec_filename in SCAN_OPENAPI_SERVER_REPLACEMENT_SPECS:
+        text = text.replace(SCAN_OPENAPI_PLACEHOLDER_SERVER, SCAN_OPENAPI_PUBLIC_SERVER)
     filtered_lines = [
         line
         for line in text.splitlines()
@@ -274,26 +279,75 @@ def missing_operation_summaries(spec: dict[str, Any]) -> set[tuple[str, str]]:
     return missing
 
 
+def mintlify_operation_path(path: str) -> str:
+    return re.sub(r"\{([^{}]+)\}", r":\1", path)
+
+
+def generated_operation_summary(path: str, method: str) -> str:
+    return f"{method.upper()} {mintlify_operation_path(path)}"
+
+
+def path_only_operation_summary(path: str, method: str, summary: str) -> bool:
+    normalized = summary.strip()
+    if normalized == generated_operation_summary(path, method):
+        return False
+    return normalized in {
+        path,
+        mintlify_operation_path(path),
+        f"{method.upper()} {path}",
+    }
+
+
+def operation_summary_rewrites(spec: dict[str, Any]) -> dict[tuple[str, str], str]:
+    paths = spec.get("paths")
+    if not isinstance(paths, dict):
+        return {}
+
+    rewrites: dict[tuple[str, str], str] = {}
+    for path, path_item in paths.items():
+        if not isinstance(path, str) or not isinstance(path_item, dict):
+            continue
+        for method, operation in path_item.items():
+            if method.lower() not in HTTP_METHODS or not isinstance(operation, dict):
+                continue
+            summary = operation.get("summary")
+            if not isinstance(summary, str) or not summary.strip():
+                rewrites[(path, method.lower())] = generated_operation_summary(path, method)
+            elif path_only_operation_summary(path, method, summary):
+                rewrites[(path, method.lower())] = generated_operation_summary(path, method)
+    return rewrites
+
+
 def add_missing_operation_summaries(text: str) -> str:
     spec = yaml.safe_load(text)
     if not isinstance(spec, dict):
         raise ValueError("Expected generated OpenAPI YAML to parse as an object")
 
-    missing = missing_operation_summaries(spec)
-    if not missing:
+    rewrites = operation_summary_rewrites(spec)
+    if not rewrites:
         return text
+    missing = missing_operation_summaries(spec)
 
     lines = text.splitlines()
     output_lines: list[str] = []
     in_paths = False
     current_path: str | None = None
+    current_method: str | None = None
 
     for line in lines:
+        if current_path is not None and current_method is not None:
+            summary_match = re.fullmatch(r"      summary:\s*.*", line)
+            if summary_match and (current_path, current_method) in rewrites:
+                output_lines.append(f'      summary: "{rewrites[(current_path, current_method)]}"')
+                current_method = None
+                continue
+
         output_lines.append(line)
 
         if re.fullmatch(r"paths:\s*", line):
             in_paths = True
             current_path = None
+            current_method = None
             continue
 
         if not in_paths:
@@ -302,11 +356,13 @@ def add_missing_operation_summaries(text: str) -> str:
         if line and not line.startswith(" "):
             in_paths = False
             current_path = None
+            current_method = None
             continue
 
         path_match = re.fullmatch(r"  (?P<path>/.*):\s*", line)
         if path_match:
             current_path = path_match.group("path")
+            current_method = None
             continue
 
         method_match = re.fullmatch(r"    (?P<method>get|put|post|delete|options|head|patch|trace):\s*", line)
@@ -314,17 +370,19 @@ def add_missing_operation_summaries(text: str) -> str:
             continue
 
         method = method_match.group("method")
+        current_method = method
         if (current_path, method) in missing:
-            output_lines.append(f'      summary: "{current_path}"')
+            output_lines.append(f'      summary: "{rewrites[(current_path, method)]}"')
+            current_method = None
 
     rendered = "\n".join(output_lines).rstrip() + "\n"
     parsed = yaml.safe_load(rendered)
     if not isinstance(parsed, dict):
         raise ValueError("Generated OpenAPI YAML stopped parsing after summary insertion")
-    remaining = missing_operation_summaries(parsed)
+    remaining = operation_summary_rewrites(parsed)
     if remaining:
         details = ", ".join(f"{method.upper()} {path}" for path, method in sorted(remaining))
-        raise ValueError(f"Failed to insert generated summaries for OpenAPI operations: {details}")
+        raise ValueError(f"Failed to normalize generated summaries for OpenAPI operations: {details}")
     return rendered
 
 
@@ -351,6 +409,7 @@ def write_managed_specs(
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_bytes(
                 render_output_bytes(
+                    spec_filename=spec["filename"],
                     spec_bytes=spec_bytes[spec["filename"]],
                     output_path=output_path,
                 )
@@ -447,6 +506,54 @@ def build_splice_group_pages(*, docs_root: Path, families: list[dict[str, Any]])
     return pages
 
 
+def navigation_pages(payload: dict[str, Any], dropdown_label: str, docs_json_path: Path) -> list[Any]:
+    navigation = payload.get("navigation")
+    if not isinstance(navigation, dict):
+        raise ValueError(f"docs.json missing navigation object: {docs_json_path}")
+
+    dropdowns = navigation.get("dropdowns")
+    if isinstance(dropdowns, list):
+        dropdown = next(
+            (item for item in dropdowns if isinstance(item, dict) and item.get("dropdown") == dropdown_label),
+            None,
+        )
+        if dropdown is None:
+            raise ValueError(f"Dropdown not found in docs.json: {dropdown_label}")
+        pages = dropdown.get("pages")
+        if not isinstance(pages, list):
+            raise ValueError(f"Dropdown does not expose a pages list: {dropdown_label}")
+        return pages
+
+    products = navigation.get("products")
+    if isinstance(products, list):
+        product = next(
+            (item for item in products if isinstance(item, dict) and item.get("product") == dropdown_label),
+            None,
+        )
+        if product is None:
+            raise ValueError(f"Product not found in docs.json: {dropdown_label}")
+        pages = product.get("pages")
+        if not isinstance(pages, list):
+            raise ValueError(f"Product does not expose a pages list: {dropdown_label}")
+        return pages
+
+    raise ValueError(f"docs.json navigation must define dropdowns or products: {docs_json_path}")
+
+
+def merge_splice_group_pages(*, existing_pages: list[Any], generated_pages: list[Any]) -> list[Any]:
+    generated_group_labels = {
+        item["group"]
+        for item in generated_pages
+        if isinstance(item, dict) and isinstance(item.get("group"), str)
+    }
+    preserved_pages = [
+        item
+        for item in existing_pages
+        if not (isinstance(item, dict) and item.get("group") in generated_group_labels)
+    ]
+    return preserved_pages + generated_pages
+
+
 def update_docs_navigation(
     *,
     docs_json_path: Path,
@@ -454,13 +561,6 @@ def update_docs_navigation(
     families: list[dict[str, Any]],
 ) -> None:
     payload = load_json(docs_json_path)
-    navigation = payload.get("navigation")
-    if not isinstance(navigation, dict):
-        raise ValueError(f"docs.json missing navigation object: {docs_json_path}")
-    dropdowns = navigation.get("dropdowns")
-    if not isinstance(dropdowns, list):
-        raise ValueError(f"docs.json navigation.dropdowns must be a list: {docs_json_path}")
-
     dropdown_label = source_config.get("nav_dropdown") or "API Reference"
     if not isinstance(dropdown_label, str):
         raise ValueError("nav_dropdown must be a string")
@@ -473,19 +573,15 @@ def update_docs_navigation(
     enabled_specs = enabled_nav_specs(source_config)
     navigation_families = filtered_families_for_navigation(families=families, enabled_specs=enabled_specs)
 
-    dropdown = next(
-        (item for item in dropdowns if isinstance(item, dict) and item.get("dropdown") == dropdown_label),
-        None,
-    )
-    if dropdown is None:
-        raise ValueError(f"Dropdown not found in docs.json: {dropdown_label}")
-    pages = dropdown.get("pages")
-    if not isinstance(pages, list):
-        raise ValueError(f"Dropdown does not expose a pages list: {dropdown_label}")
+    pages = navigation_pages(payload, dropdown_label, docs_json_path)
 
     deduped_pages: list[Any] = []
+    existing_top_group_pages: list[Any] | None = None
     for item in pages:
         if isinstance(item, dict) and item.get("group") == top_level_group_label:
+            group_pages = item.get("pages")
+            if isinstance(group_pages, list):
+                existing_top_group_pages = group_pages
             continue
         deduped_pages.append(item)
 
@@ -499,14 +595,18 @@ def update_docs_navigation(
                 insert_at = index + 1
                 break
 
+    generated_pages = build_splice_group_pages(docs_root=docs_json_path.parent, families=navigation_families)
+    if existing_top_group_pages is not None:
+        generated_pages = merge_splice_group_pages(
+            existing_pages=existing_top_group_pages,
+            generated_pages=generated_pages,
+        )
+
     deduped_pages.insert(
         insert_at,
-        {
-            "group": top_level_group_label,
-            "pages": build_splice_group_pages(docs_root=docs_json_path.parent, families=navigation_families),
-        },
+        {"group": top_level_group_label, "pages": generated_pages},
     )
-    dropdown["pages"] = deduped_pages
+    pages[:] = deduped_pages
     docs_json_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
 

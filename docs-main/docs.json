@@ -186,8 +186,7 @@
               "appdev/modules/m3-contract-keys",
               "appdev/modules/m3-interfaces",
               "appdev/modules/m3-testing",
-              "appdev/modules/m3-building-packaging",
-              "appdev/modules/m3-functional-programming"
+              "appdev/modules/m3-building-packaging"
             ]
           },
           {
@@ -266,7 +265,6 @@
               "appdev/deep-dives/contracts-and-transactions-in-java",
               "appdev/deep-dives/smart-contract-upgrade",
               "appdev/deep-dives/app-architecture-design",
-              "appdev/deep-dives/upgrading-architecture",
               "appdev/deep-dives/command-deduplication",
               "appdev/deep-dives/explicit-contract-disclosure",
               "appdev/deep-dives/values-in-the-ledger-api",
@@ -284,8 +282,7 @@
                   "appdev/quickstart/deploy-to-devnet"
                 ]
               },
-              "appdev/deep-dives/token-standard",
-              "appdev/deep-dives/tokenomics"
+              "appdev/deep-dives/token-standard"
             ]
           },
           {
@@ -339,8 +336,7 @@
               "global-synchronizer/understand/introduction",
               "global-synchronizer/understand/validator-roles",
               "global-synchronizer/extension-synchronizers/bft-orderer",
-              "global-synchronizer/understand/installing-daml-sdk",
-              "global-synchronizer/understand/local-testing"
+              "global-synchronizer/understand/installing-daml-sdk"
             ]
           },
           {
@@ -383,6 +379,8 @@
             "group": "Splice Fundamentals",
             "pages": [
               "global-synchronizer/splice-fundamentals/rewards-minting",
+              "global-synchronizer/splice-fundamentals/traffic-based-app-rewards",
+              "global-synchronizer/splice-fundamentals/reward-sharing",
               "global-synchronizer/deployment/synchronizer-traffic",
               "global-synchronizer/splice-fundamentals/validator-development-fund",
               "global-synchronizer/splice-fundamentals/sv-live-tokenomics",
@@ -393,7 +391,6 @@
           {
             "group": "Canton Console",
             "pages": [
-              "global-synchronizer/canton-console/console-overview",
               "global-synchronizer/canton-console/essential-commands",
               "global-synchronizer/canton-console/scripting",
               "global-synchronizer/canton-console/debugging-workflows",
@@ -406,7 +403,6 @@
             "group": "Production Operations",
             "pages": [
               "global-synchronizer/production-operations/monitoring-setup",
-              "global-synchronizer/production-operations/key-metrics",
               "global-synchronizer/production-operations/splice-metrics-overview",
               "global-synchronizer/production-operations/performance-optimization",
               "global-synchronizer/production-operations/key-management",
@@ -482,7 +478,6 @@
               "global-synchronizer/reference/crypto-schemes",
               "global-synchronizer/reference/kms-driver-guide",
               "global-synchronizer/reference/canton-metrics",
-              "global-synchronizer/reference/splice-metrics",
               "global-synchronizer/reference/error-codes"
             ]
           },
@@ -545,7 +540,6 @@
               "integrations/wallet/sdk-download",
               "integrations/wallet/configuration",
               "integrations/wallet/guidance",
-              "integrations/wallet/exchange-integration",
               "integrations/wallet/proof-of-transfer",
               "integrations/wallet/wallet-sdk-v1-migration"
             ]
@@ -554,8 +548,7 @@
             "group": "Exchanges",
             "pages": [
               "integrations/exchanges/sdk-download",
-              "integrations/exchanges/guidance",
-              "integrations/exchanges/node-operations"
+              "integrations/exchanges/guidance"
             ]
           },
           {
@@ -591,8 +584,7 @@
             "group": "SDKs",
             "pages": [
               "sdks-tools/sdks/daml-sdk",
-              "sdks-tools/sdks/wallet-sdk",
-              "sdks-tools/sdks/exchange-sdk"
+              "sdks-tools/sdks/wallet-sdk"
             ]
           },
           {
@@ -600,9 +592,7 @@
             "pages": [
               "sdks-tools/language-bindings/java",
               "sdks-tools/language-bindings/java-client-libraries",
-              "sdks-tools/language-bindings/java-codegen",
               "sdks-tools/language-bindings/javascript",
-              "sdks-tools/language-bindings/javascript-codegen",
               "sdks-tools/language-bindings/community"
             ]
           },
@@ -620,10 +610,7 @@
             "pages": [
               "sdks-tools/development-tools/daml-studio",
               "sdks-tools/development-tools/daml-compiler",
-              "sdks-tools/development-tools/daml-assistant",
-              "sdks-tools/development-tools/daml-assistant-config-files",
               "sdks-tools/development-tools/daml-profiler",
-              "sdks-tools/development-tools/parse-daml-archive-files",
               "sdks-tools/development-tools/localnet",
               "sdks-tools/development-tools/sandbox",
               {
@@ -632,8 +619,7 @@
                   "sdks-tools/development-tools/pqs",
                   "sdks-tools/development-tools/pqs/configure",
                   "sdks-tools/development-tools/pqs/operate",
-                  "sdks-tools/development-tools/pqs/optimize",
-                  "sdks-tools/development-tools/pqs/reference"
+                  "sdks-tools/development-tools/pqs/optimize"
                 ]
               }
             ]
@@ -657,197 +643,6 @@
                   "sdks-tools/api-reference/splice-apis",
                   "sdks-tools/api-reference/splice-overview",
                   "sdks-tools/api-reference/splice-http-apis",
-                  "sdks-tools/api-reference/splice-daml-apis",
-                  "sdks-tools/api-reference/splice-daml-models",
-                  {
-                    "group": "Splice Daml Packages",
-                    "pages": [
-                      {
-                        "group": "splice-amulet",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/index",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulet-tokenapiutils",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulet-twosteptransfer",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulet",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amuletallocation",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amuletconfig",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amuletrules",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulettransferinstruction",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-decentralizedsynchronizer",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-expiry",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-externalpartyamuletrules",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-externalpartyconfigstate",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-fees",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-issuance",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-relround",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-round",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-schedule",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-types",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet/splice-validatorlicense"
-                        ]
-                      },
-                      {
-                        "group": "splice-amulet-name-service",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-amulet-name-service/index",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet-name-service/splice-ans-amuletconversionratefeed",
-                          "sdks-tools/api-reference/splice-daml/splice-amulet-name-service/splice-ans"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-featured-app-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v1/splice-api-featuredapprightv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-featured-app-v2",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v2/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v2/splice-api-featuredapprightv2"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-allocation-instruction-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-instruction-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-instruction-v1/splice-api-token-allocationinstructionv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-allocation-request-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-request-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-request-v1/splice-api-token-allocationrequestv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-allocation-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-v1/splice-api-token-allocationv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-burn-mint-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-burn-mint-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-burn-mint-v1/splice-api-token-burnmintv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-holding-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-holding-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-holding-v1/splice-api-token-holdingv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-metadata-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-metadata-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-metadata-v1/splice-api-token-metadatav1"
-                        ]
-                      },
-                      {
-                        "group": "splice-api-token-transfer-instruction-v1",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-transfer-instruction-v1/index",
-                          "sdks-tools/api-reference/splice-daml/splice-api-token-transfer-instruction-v1/splice-api-token-transferinstructionv1"
-                        ]
-                      },
-                      {
-                        "group": "splice-dso-governance",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/index",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-cometbft",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dso-amuletprice",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dso-decentralizedsynchronizer",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dso-svstate",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dsobootstrap",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dsorules",
-                          "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-svonboarding"
-                        ]
-                      },
-                      {
-                        "group": "splice-token-standard-test",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/index",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-registries-amuletregistry-parameters",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-registries-amuletregistry",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-tokenstandard-registryapi",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-tokenstandard-walletclient",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-utils",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-tests-testamulettokendvp",
-                          "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-tests-testamulettokentransfer"
-                        ]
-                      },
-                      {
-                        "group": "splice-token-test-trading-app",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-token-test-trading-app/index",
-                          "sdks-tools/api-reference/splice-daml/splice-token-test-trading-app/splice-testing-apps-tradingapp"
-                        ]
-                      },
-                      {
-                        "group": "splice-util",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-util/index",
-                          "sdks-tools/api-reference/splice-daml/splice-util/splice-util"
-                        ]
-                      },
-                      {
-                        "group": "splice-util-batched-markers",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-util-batched-markers/index",
-                          "sdks-tools/api-reference/splice-daml/splice-util-batched-markers/splice-util-featuredapp-batchedmarkersproxy"
-                        ]
-                      },
-                      {
-                        "group": "splice-util-featured-app-proxies",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-util-featured-app-proxies/index",
-                          "sdks-tools/api-reference/splice-daml/splice-util-featured-app-proxies/splice-util-featuredapp-delegateproxy",
-                          "sdks-tools/api-reference/splice-daml/splice-util-featured-app-proxies/splice-util-featuredapp-walletuserproxy"
-                        ]
-                      },
-                      {
-                        "group": "splice-util-token-standard-wallet",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-util-token-standard-wallet/index",
-                          "sdks-tools/api-reference/splice-daml/splice-util-token-standard-wallet/splice-util-token-wallet-mergedelegation"
-                        ]
-                      },
-                      {
-                        "group": "splice-validator-lifecycle",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-validator-lifecycle/index",
-                          "sdks-tools/api-reference/splice-daml/splice-validator-lifecycle/splice-validatoronboarding"
-                        ]
-                      },
-                      {
-                        "group": "splice-wallet",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/index",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-buytrafficrequest",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-install",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-mintingdelegation",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-topupstate",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-transferoffer",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-transferpreapproval"
-                        ]
-                      },
-                      {
-                        "group": "splice-wallet-payments",
-                        "pages": [
-                          "sdks-tools/api-reference/splice-daml/splice-wallet-payments/index",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet-payments/splice-wallet-payment",
-                          "sdks-tools/api-reference/splice-daml/splice-wallet-payments/splice-wallet-subscriptions"
-                        ]
-                      }
-                    ]
-                  },
                   {
                     "group": "Scan APIs",
                     "pages": [
@@ -1008,124 +803,122 @@
                 "group": "gRPC API",
                 "pages": [
                   {
-                    "group": "Packages",
                     "pages": [
                       {
-                        "group": "v2",
                         "pages": [
                           "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2",
                           {
-                            "group": "Services",
                             "pages": [
                               {
-                                "group": "CommandCompletionService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/commandcompletionservice/completionstream"
-                                ]
+                                ],
+                                "group": "CommandCompletionService"
                               },
                               {
-                                "group": "CommandService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/commandservice/submitandwait",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/commandservice/submitandwaitforreassignment",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/commandservice/submitandwaitfortransaction"
-                                ]
+                                ],
+                                "group": "CommandService"
                               },
                               {
-                                "group": "CommandSubmissionService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/commandsubmissionservice/submit",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/commandsubmissionservice/submitreassignment"
-                                ]
+                                ],
+                                "group": "CommandSubmissionService"
                               },
                               {
-                                "group": "ContractService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/contractservice/getcontract"
-                                ]
+                                ],
+                                "group": "ContractService"
                               },
                               {
-                                "group": "EventQueryService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/eventqueryservice/geteventsbycontractid"
-                                ]
+                                ],
+                                "group": "EventQueryService"
                               },
                               {
-                                "group": "PackageService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/packageservice/getpackage",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/packageservice/getpackagestatus",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/packageservice/listpackages",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/packageservice/listvettedpackages"
-                                ]
+                                ],
+                                "group": "PackageService"
                               },
                               {
-                                "group": "StateService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/stateservice/getactivecontracts",
+                                  "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/stateservice/getactivecontractspage",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/stateservice/getconnectedsynchronizers",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/stateservice/getlatestprunedoffsets",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/stateservice/getledgerend"
-                                ]
+                                ],
+                                "group": "StateService"
                               },
                               {
-                                "group": "UpdateService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/updateservice/getupdatebyid",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/updateservice/getupdatebyoffset",
-                                  "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/updateservice/getupdates"
-                                ]
+                                  "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/updateservice/getupdates",
+                                  "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/updateservice/getupdatespage"
+                                ],
+                                "group": "UpdateService"
                               },
                               {
-                                "group": "VersionService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2/versionservice/getledgerapiversion"
-                                ]
+                                ],
+                                "group": "VersionService"
                               }
-                            ]
+                            ],
+                            "group": "Services"
                           }
-                        ]
+                        ],
+                        "group": "v2"
                       },
                       {
-                        "group": "v2.admin",
                         "pages": [
                           "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin",
                           {
-                            "group": "Services",
                             "pages": [
                               {
-                                "group": "CommandInspectionService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/commandinspectionservice/getcommandstatus"
-                                ]
+                                ],
+                                "group": "CommandInspectionService"
                               },
                               {
-                                "group": "IdentityProviderConfigService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/identityproviderconfigservice/createidentityproviderconfig",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/identityproviderconfigservice/deleteidentityproviderconfig",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/identityproviderconfigservice/getidentityproviderconfig",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/identityproviderconfigservice/listidentityproviderconfigs",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/identityproviderconfigservice/updateidentityproviderconfig"
-                                ]
+                                ],
+                                "group": "IdentityProviderConfigService"
                               },
                               {
-                                "group": "PackageManagementService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/packagemanagementservice/listknownpackages",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/packagemanagementservice/updatevettedpackages",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/packagemanagementservice/uploaddarfile",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/packagemanagementservice/validatedarfile"
-                                ]
+                                ],
+                                "group": "PackageManagementService"
                               },
                               {
-                                "group": "ParticipantPruningService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/participantpruningservice/prune"
-                                ]
+                                ],
+                                "group": "ParticipantPruningService"
                               },
                               {
-                                "group": "PartyManagementService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/partymanagementservice/allocateexternalparty",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/partymanagementservice/allocateparty",
@@ -1135,10 +928,10 @@
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/partymanagementservice/listknownparties",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/partymanagementservice/updatepartydetails",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/partymanagementservice/updatepartyidentityproviderid"
-                                ]
+                                ],
+                                "group": "PartyManagementService"
                               },
                               {
-                                "group": "UserManagementService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/usermanagementservice/createuser",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/usermanagementservice/deleteuser",
@@ -1149,21 +942,21 @@
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/usermanagementservice/revokeuserrights",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/usermanagementservice/updateuser",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-admin/usermanagementservice/updateuseridentityproviderid"
-                                ]
+                                ],
+                                "group": "UserManagementService"
                               }
-                            ]
+                            ],
+                            "group": "Services"
                           }
-                        ]
+                        ],
+                        "group": "v2.admin"
                       },
                       {
-                        "group": "v2.interactive",
                         "pages": [
                           "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive",
                           {
-                            "group": "Services",
                             "pages": [
                               {
-                                "group": "InteractiveSubmissionService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive/interactivesubmissionservice/executesubmission",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive/interactivesubmissionservice/executesubmissionandwait",
@@ -1171,37 +964,41 @@
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive/interactivesubmissionservice/getpreferredpackages",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive/interactivesubmissionservice/getpreferredpackageversion",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive/interactivesubmissionservice/preparesubmission"
-                                ]
+                                ],
+                                "group": "InteractiveSubmissionService"
                               }
-                            ]
+                            ],
+                            "group": "Services"
                           }
-                        ]
+                        ],
+                        "group": "v2.interactive"
                       },
                       {
-                        "group": "v2.interactive.transaction.v1",
                         "pages": [
                           "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-interactive-transaction-v1"
-                        ]
+                        ],
+                        "group": "v2.interactive.transaction.v1"
                       },
                       {
-                        "group": "v2.testing",
                         "pages": [
                           "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-testing",
                           {
-                            "group": "Services",
                             "pages": [
                               {
-                                "group": "TimeService",
                                 "pages": [
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-testing/timeservice/gettime",
                                   "reference/grpc-ledger-api-reference/com-daml-ledger-api-v2-testing/timeservice/settime"
-                                ]
+                                ],
+                                "group": "TimeService"
                               }
-                            ]
+                            ],
+                            "group": "Services"
                           }
-                        ]
+                        ],
+                        "group": "v2.testing"
                       }
-                    ]
+                    ],
+                    "group": "Packages"
                   },
                   "reference/grpc-ledger-api-reference/details"
                 ]
@@ -1212,12 +1009,6 @@
                   {
                     "group": "Packages",
                     "pages": [
-                      {
-                        "group": "com.daml.ledger.api",
-                        "pages": [
-                          "reference/protobuf/packages/com-daml-ledger-api"
-                        ]
-                      },
                       {
                         "group": "com.daml.ledger.api.v2",
                         "pages": [
@@ -1271,6 +1062,7 @@
                                 "group": "StateService",
                                 "pages": [
                                   "reference/protobuf/operations/com-daml-ledger-api-v2/stateservice/getactivecontracts",
+                                  "reference/protobuf/operations/com-daml-ledger-api-v2/stateservice/getactivecontractspage",
                                   "reference/protobuf/operations/com-daml-ledger-api-v2/stateservice/getconnectedsynchronizers",
                                   "reference/protobuf/operations/com-daml-ledger-api-v2/stateservice/getlatestprunedoffsets",
                                   "reference/protobuf/operations/com-daml-ledger-api-v2/stateservice/getledgerend"
@@ -1281,7 +1073,8 @@
                                 "pages": [
                                   "reference/protobuf/operations/com-daml-ledger-api-v2/updateservice/getupdatebyid",
                                   "reference/protobuf/operations/com-daml-ledger-api-v2/updateservice/getupdatebyoffset",
-                                  "reference/protobuf/operations/com-daml-ledger-api-v2/updateservice/getupdates"
+                                  "reference/protobuf/operations/com-daml-ledger-api-v2/updateservice/getupdates",
+                                  "reference/protobuf/operations/com-daml-ledger-api-v2/updateservice/getupdatespage"
                                 ]
                               },
                               {
@@ -1418,10 +1211,8 @@
                 "group": "Java Bindings",
                 "pages": [
                   {
-                    "group": "Javadocs",
                     "pages": [
                       {
-                        "group": "com.daml.ledger.javaapi.data",
                         "pages": [
                           "reference/java/com-daml-ledger-javaapi-data/activecontract",
                           "reference/java/com-daml-ledger-javaapi-data/activecontracts",
@@ -1565,10 +1356,10 @@
                           "reference/java/com-daml-ledger-javaapi-data/value",
                           "reference/java/com-daml-ledger-javaapi-data/variant",
                           "reference/java/com-daml-ledger-javaapi-data/workflowevent"
-                        ]
+                        ],
+                        "group": "com.daml.ledger.javaapi.data"
                       },
                       {
-                        "group": "com.daml.ledger.javaapi.data.codegen",
                         "pages": [
                           "reference/java/com-daml-ledger-javaapi-data-codegen/bykey",
                           "reference/java/com-daml-ledger-javaapi-data-codegen/bykey-tointerface",
@@ -1601,10 +1392,10 @@
                           "reference/java/com-daml-ledger-javaapi-data-codegen/update",
                           "reference/java/com-daml-ledger-javaapi-data-codegen/valuedecoder",
                           "reference/java/com-daml-ledger-javaapi-data-codegen/variant"
-                        ]
+                        ],
+                        "group": "com.daml.ledger.javaapi.data.codegen"
                       },
                       {
-                        "group": "com.daml.ledger.javaapi.data.codegen.json",
                         "pages": [
                           "reference/java/com-daml-ledger-javaapi-data-codegen-json/jsonlfdecoder",
                           "reference/java/com-daml-ledger-javaapi-data-codegen-json/jsonlfdecoder-error",
@@ -1618,9 +1409,11 @@
                           "reference/java/com-daml-ledger-javaapi-data-codegen-json/jsonlfreader-unknownvalue",
                           "reference/java/com-daml-ledger-javaapi-data-codegen-json/jsonlfwriter",
                           "reference/java/com-daml-ledger-javaapi-data-codegen-json/jsonlfwriter-options"
-                        ]
+                        ],
+                        "group": "com.daml.ledger.javaapi.data.codegen.json"
                       }
-                    ]
+                    ],
+                    "group": "Javadocs"
                   },
                   "reference/java-bindings"
                 ]
@@ -1693,8 +1486,10 @@
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/disconnect",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/getactivenetwork",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/getprimaryaccount",
+                  "reference/wallet-gateway-json-rpc/operations/dapp-api/isconnected",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/ledgerapi",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/listaccounts",
+                  "reference/wallet-gateway-json-rpc/operations/dapp-api/messagesignature",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/prepareexecute",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/prepareexecuteandwait",
                   "reference/wallet-gateway-json-rpc/operations/dapp-api/signmessage",
@@ -1712,8 +1507,10 @@
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/disconnect",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/getactivenetwork",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/getprimaryaccount",
+                  "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/isconnected",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/ledgerapi",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/listaccounts",
+                  "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/messagesignature",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/onstatuschanged",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/prepareexecute",
                   "reference/wallet-gateway-json-rpc/operations/dapp-remote-api/signmessage",
@@ -1735,12 +1532,16 @@
                   "reference/wallet-gateway-json-rpc/operations/user-api/addsession",
                   "reference/wallet-gateway-json-rpc/operations/user-api/allocatepartyforwallet",
                   "reference/wallet-gateway-json-rpc/operations/user-api/createwallet",
+                  "reference/wallet-gateway-json-rpc/operations/user-api/deletemessagetosign",
                   "reference/wallet-gateway-json-rpc/operations/user-api/deletetransaction",
                   "reference/wallet-gateway-json-rpc/operations/user-api/execute",
+                  "reference/wallet-gateway-json-rpc/operations/user-api/getmessagetosign",
+                  "reference/wallet-gateway-json-rpc/operations/user-api/getnetwork",
                   "reference/wallet-gateway-json-rpc/operations/user-api/gettransaction",
                   "reference/wallet-gateway-json-rpc/operations/user-api/getuser",
                   "reference/wallet-gateway-json-rpc/operations/user-api/iswalletsyncneeded",
                   "reference/wallet-gateway-json-rpc/operations/user-api/listidps",
+                  "reference/wallet-gateway-json-rpc/operations/user-api/listmessagestosign",
                   "reference/wallet-gateway-json-rpc/operations/user-api/listnetworks",
                   "reference/wallet-gateway-json-rpc/operations/user-api/listsessions",
                   "reference/wallet-gateway-json-rpc/operations/user-api/listtransactions",
@@ -1749,8 +1550,10 @@
                   "reference/wallet-gateway-json-rpc/operations/user-api/removenetwork",
                   "reference/wallet-gateway-json-rpc/operations/user-api/removesession",
                   "reference/wallet-gateway-json-rpc/operations/user-api/removewallet",
+                  "reference/wallet-gateway-json-rpc/operations/user-api/selfsignedaccesstoken",
                   "reference/wallet-gateway-json-rpc/operations/user-api/setprimarywallet",
                   "reference/wallet-gateway-json-rpc/operations/user-api/sign",
+                  "reference/wallet-gateway-json-rpc/operations/user-api/signmessage",
                   "reference/wallet-gateway-json-rpc/operations/user-api/syncwallets",
                   "reference/wallet-gateway-json-rpc/operations/user-api/details"
                 ]
@@ -1764,6 +1567,7 @@
                   "reference/wallet-gateway-json-rpc/operations/signing-api/gettransaction",
                   "reference/wallet-gateway-json-rpc/operations/signing-api/gettransactions",
                   "reference/wallet-gateway-json-rpc/operations/signing-api/setconfiguration",
+                  "reference/wallet-gateway-json-rpc/operations/signing-api/signmessage",
                   "reference/wallet-gateway-json-rpc/operations/signing-api/signtransaction",
                   "reference/wallet-gateway-json-rpc/operations/signing-api/subscribetransactions",
                   "reference/wallet-gateway-json-rpc/operations/signing-api/details"
@@ -1775,6 +1579,197 @@
           {
             "group": "Splice APIs",
             "pages": [
+              "sdks-tools/api-reference/splice-daml-apis",
+              "sdks-tools/api-reference/splice-daml-models",
+              {
+                "group": "Splice Daml Packages",
+                "pages": [
+                  {
+                    "group": "splice-amulet",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/index",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulet-tokenapiutils",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulet-twosteptransfer",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulet",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amuletallocation",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amuletconfig",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amuletrules",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-amulettransferinstruction",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-decentralizedsynchronizer",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-expiry",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-externalpartyamuletrules",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-externalpartyconfigstate",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-fees",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-issuance",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-relround",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-round",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-schedule",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-types",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet/splice-validatorlicense"
+                    ]
+                  },
+                  {
+                    "group": "splice-amulet-name-service",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-amulet-name-service/index",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet-name-service/splice-ans-amuletconversionratefeed",
+                      "sdks-tools/api-reference/splice-daml/splice-amulet-name-service/splice-ans"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-featured-app-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v1/splice-api-featuredapprightv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-featured-app-v2",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v2/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-featured-app-v2/splice-api-featuredapprightv2"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-allocation-instruction-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-instruction-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-instruction-v1/splice-api-token-allocationinstructionv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-allocation-request-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-request-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-request-v1/splice-api-token-allocationrequestv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-allocation-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-allocation-v1/splice-api-token-allocationv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-burn-mint-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-burn-mint-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-burn-mint-v1/splice-api-token-burnmintv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-holding-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-holding-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-holding-v1/splice-api-token-holdingv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-metadata-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-metadata-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-metadata-v1/splice-api-token-metadatav1"
+                    ]
+                  },
+                  {
+                    "group": "splice-api-token-transfer-instruction-v1",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-transfer-instruction-v1/index",
+                      "sdks-tools/api-reference/splice-daml/splice-api-token-transfer-instruction-v1/splice-api-token-transferinstructionv1"
+                    ]
+                  },
+                  {
+                    "group": "splice-dso-governance",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/index",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-cometbft",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dso-amuletprice",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dso-decentralizedsynchronizer",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dso-svstate",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dsobootstrap",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-dsorules",
+                      "sdks-tools/api-reference/splice-daml/splice-dso-governance/splice-svonboarding"
+                    ]
+                  },
+                  {
+                    "group": "splice-token-standard-test",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/index",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-registries-amuletregistry-parameters",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-registries-amuletregistry",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-tokenstandard-registryapi",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-tokenstandard-walletclient",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-testing-utils",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-tests-testamulettokendvp",
+                      "sdks-tools/api-reference/splice-daml/splice-token-standard-test/splice-tests-testamulettokentransfer"
+                    ]
+                  },
+                  {
+                    "group": "splice-token-test-trading-app",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-token-test-trading-app/index",
+                      "sdks-tools/api-reference/splice-daml/splice-token-test-trading-app/splice-testing-apps-tradingapp"
+                    ]
+                  },
+                  {
+                    "group": "splice-util",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-util/index",
+                      "sdks-tools/api-reference/splice-daml/splice-util/splice-util"
+                    ]
+                  },
+                  {
+                    "group": "splice-util-batched-markers",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-util-batched-markers/index",
+                      "sdks-tools/api-reference/splice-daml/splice-util-batched-markers/splice-util-featuredapp-batchedmarkersproxy"
+                    ]
+                  },
+                  {
+                    "group": "splice-util-featured-app-proxies",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-util-featured-app-proxies/index",
+                      "sdks-tools/api-reference/splice-daml/splice-util-featured-app-proxies/splice-util-featuredapp-delegateproxy",
+                      "sdks-tools/api-reference/splice-daml/splice-util-featured-app-proxies/splice-util-featuredapp-walletuserproxy"
+                    ]
+                  },
+                  {
+                    "group": "splice-util-token-standard-wallet",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-util-token-standard-wallet/index",
+                      "sdks-tools/api-reference/splice-daml/splice-util-token-standard-wallet/splice-util-token-wallet-mergedelegation"
+                    ]
+                  },
+                  {
+                    "group": "splice-validator-lifecycle",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-validator-lifecycle/index",
+                      "sdks-tools/api-reference/splice-daml/splice-validator-lifecycle/splice-validatoronboarding"
+                    ]
+                  },
+                  {
+                    "group": "splice-wallet",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/index",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-buytrafficrequest",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-install",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-mintingdelegation",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-topupstate",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-transferoffer",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet/splice-wallet-transferpreapproval"
+                    ]
+                  },
+                  {
+                    "group": "splice-wallet-payments",
+                    "pages": [
+                      "sdks-tools/api-reference/splice-daml/splice-wallet-payments/index",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet-payments/splice-wallet-payment",
+                      "sdks-tools/api-reference/splice-daml/splice-wallet-payments/splice-wallet-subscriptions"
+                    ]
+                  }
+                ]
+              },
               {
                 "group": "Scan APIs",
                 "pages": [
@@ -1795,6 +1790,8 @@
                       "GET /v0/admin/validator/licenses",
                       "GET /v0/dso-sequencers",
                       "GET /v0/sv-bft-sequencers",
+                      "GET /v0/roll-forward-lsu",
+                      "GET /v0/active-synchronizer-serial",
                       "GET /v0/domains/{domain_id}/parties/{party_id}/participant-id",
                       "GET /v1/domains/{domain_id}/parties/{party_id}/participant-id",
                       "GET /v0/domains/{domain_id}/members/{member_id}/traffic-status",
@@ -1804,12 +1801,16 @@
                       "GET /v2/updates/{update_id}",
                       "POST /v1/updates",
                       "GET /v1/updates/{update_id}",
+                      "GET /v2/updates/hash/{hash}",
                       "GET /v0/state/acs/snapshot-timestamp",
                       "GET /v0/state/acs/snapshot-timestamp-after",
                       "POST /v0/state/acs",
+                      "POST /v1/state/acs",
                       "POST /v0/state/acs/force",
                       "POST /v0/holdings/state",
+                      "POST /v1/holdings/state",
                       "POST /v0/holdings/summary",
+                      "POST /v1/holdings/summary",
                       "GET /v0/ans-entries",
                       "GET /v0/ans-entries/by-party/{party}",
                       "GET /v0/ans-entries/by-name/{name}",
@@ -1819,11 +1820,13 @@
                       "POST /v0/ans-rules",
                       "GET /v0/featured-apps",
                       "GET /v0/featured-apps/{provider_party_id}",
-                      "GET /v0/top-validators-by-validator-faucets",
+                      "GET /v0/featured-apps/by-provider/{provider_party_id}",
+                      "GET /v0/featured-apps/by-contract-id/{contract_id}",
                       "GET /v0/transfer-preapprovals/by-party/{party}",
                       "GET /v0/transfer-command-counter/{party}",
                       "GET /v0/transfer-command/status",
                       "GET /v0/migrations/schedule",
+                      "GET /v0/migrations/last",
                       "GET /v0/synchronizer-identities/{domain_id_prefix}",
                       "GET /v0/synchronizer-bootstrapping-transactions/{domain_id_prefix}",
                       "GET /v0/splice-instance-names",
@@ -1836,16 +1839,7 @@
                       "POST /v0/backfilling/updates-before",
                       "GET /v0/backfilling/status",
                       "GET /v0/acs/{party}",
-                      "GET /v0/aggregated-rounds",
-                      "POST /v0/round-totals",
-                      "POST /v0/round-party-totals",
                       "GET /v0/amulet-config-for-round",
-                      "GET /v0/round-of-latest-data",
-                      "GET /v0/rewards-collected",
-                      "GET /v0/top-providers-by-app-rewards",
-                      "GET /v0/top-validators-by-validator-rewards",
-                      "GET /v0/top-validators-by-purchased-traffic",
-                      "POST /v0/activities",
                       "POST /v0/transactions",
                       "POST /v0/updates",
                       "GET /v0/updates/{update_id}",
@@ -1854,6 +1848,10 @@
                       "POST /v0/events",
                       "GET /v0/events/{update_id}",
                       "GET /v0/unclaimed-development-fund-coupons",
+                      "GET /v0/internal/reward-accounting-process/rounds/earliest-available",
+                      "GET /v0/internal/reward-accounting-process/rounds/{round_number}/activity-totals",
+                      "GET /v0/internal/reward-accounting-process/rounds/{round_number}/root-hash",
+                      "GET /v0/internal/reward-accounting-process/rounds/{round_number}/batches/{batch_hash}",
                       "GET /v0/history/bulk/acs",
                       "POST /v0/history/bulk/updates"
                     ]
@@ -1918,6 +1916,7 @@
                       "GET /v0/scan-proxy/transfer-command-counter/{party}",
                       "GET /v0/scan-proxy/transfer-command/status",
                       "POST /v0/scan-proxy/holdings/summary",
+                      "POST /v1/scan-proxy/holdings/summary",
                       "GET /v0/scan-proxy/unclaimed-development-fund-coupons"
                     ]
                   }
@@ -2008,8 +2007,6 @@
                               {
                                 "group": "StatusService",
                                 "pages": [
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-health-v30/statusservice/getlasterrortrace",
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-health-v30/statusservice/getlasterrors",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-health-v30/statusservice/healthdump",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-health-v30/statusservice/setloglevel"
                                 ]
@@ -2042,12 +2039,6 @@
                           {
                             "group": "Services",
                             "pages": [
-                              {
-                                "group": "EnterpriseParticipantReplicationService",
-                                "pages": [
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/enterpriseparticipantreplicationservice/setpassive"
-                                ]
-                              },
                               {
                                 "group": "PackageService",
                                 "pages": [
@@ -2084,16 +2075,21 @@
                                 "pages": [
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/changeassignation",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/exportacs",
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/exportacsold",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/ignoreevents",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/importacs",
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/importacsold",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/migratesynchronizer",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/performlatelsu",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/purgecontracts",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/purgedeactivatedsynchronizer",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/repaircommitmentsusingacs",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/rollbackunassignment",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantrepairservice/unignoreevents"
+                                ]
+                              },
+                              {
+                                "group": "ParticipantReplicationService",
+                                "pages": [
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/participantreplicationservice/setpassive"
                                 ]
                               },
                               {
@@ -2106,6 +2102,7 @@
                                 "group": "PartyManagementService",
                                 "pages": [
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/partymanagementservice/addpartyasync",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/partymanagementservice/addpartywithacsasync",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/partymanagementservice/clearpartyonboardingflag",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/partymanagementservice/exportpartyacs",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/partymanagementservice/getaddpartystatus",
@@ -2155,6 +2152,7 @@
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/listregisteredsynchronizers",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/logout",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/modifysynchronizer",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/performmanuallsu",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/reconnectsynchronizer",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/reconnectsynchronizers",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-admin-participant-v30/synchronizerconnectivityservice/registersynchronizer"
@@ -2275,8 +2273,11 @@
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/genesisstate",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/genesisstatev2",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listall",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listallv2",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listavailablestores",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listdecentralizednamespacedefinition",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listlsuannouncement",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listlsusequencerconnectionsuccessor",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listmediatorsynchronizerstate",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listnamespacedelegation",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listownertokeymapping",
@@ -2284,13 +2285,12 @@
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listpartyhostinglimits",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listpartytokeymapping",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listpartytoparticipant",
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listsequencerconnectionsuccessor",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listsequencersynchronizerstate",
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listsequencingparametersstate",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listsynchronizerparametersstate",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listsynchronizertrustcertificate",
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listsynchronizerupgradeannouncement",
                                   "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/listvettedpackages",
-                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/logicalupgradestate"
+                                  "reference/admin-api/protobuf/operations/com-digitalasset-canton-topology-admin-v30/topologymanagerreadservice/sequencerlsustate"
                                 ]
                               },
                               {
@@ -2384,18 +2384,6 @@
     {
       "source": "/sdks-tools/development-tools/pqs/optimize/payload-queries",
       "destination": "/sdks-tools/development-tools/pqs/optimize#payload-queries"
-    },
-    {
-      "source": "/sdks-tools/development-tools/pqs/references/configuration-options",
-      "destination": "/sdks-tools/development-tools/pqs/reference#configuration-options"
-    },
-    {
-      "source": "/sdks-tools/development-tools/pqs/references/sharing-database",
-      "destination": "/sdks-tools/development-tools/pqs/reference#sharing-a-database-with-application-tables"
-    },
-    {
-      "source": "/sdks-tools/development-tools/pqs/troubleshoot/runbooks",
-      "destination": "/sdks-tools/development-tools/pqs/reference#runbooks"
     },
     {
       "source": "/appdev/deep-dives/manage-daml-packages",
